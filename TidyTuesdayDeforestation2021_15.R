@@ -14,7 +14,7 @@ tuesdata <- tidytuesdayR::tt_load(2021, week = 15)
 
 brazil_loss <- tuesdata$brazil_loss
 
-#re-naming causes and scaling variables
+#re-naming causes and scaling loss
 brazil_loss <- brazil_loss %>% pivot_longer(commercial_crops:small_scale_clearing, values_to = "loss", names_to = "cause") %>% 
   group_by(cause) %>% 
   summarize(sum_loss = sum(loss)/50000) %>% 
