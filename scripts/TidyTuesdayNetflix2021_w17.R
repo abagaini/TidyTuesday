@@ -27,7 +27,7 @@ p <- ggplot() + theme_void() + theme(plot.background = element_rect(fill = "grey
   annotate(geom = "text", 
            label = 
              "Font size represents how often
-           each letter appears in the titles
+           that letter appears in the titles
            relative to the whole catalogue", size = 4, lineheight = 0.7, x = 9.93, y = 8, vjust = "bottom", hjust = "right", family = "Montserrat Regular", color = "grey50") +
  
   annotate(geom = "text", 
@@ -42,13 +42,13 @@ p <- ggplot() + theme_void() + theme(plot.background = element_rect(fill = "grey
   annotate(geom = "text", label = "E: 13'372 (11.05%)", size = 7, x = 9.85, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") +
   annotate(geom = "text", label = "T", size = 64, x = 10.118, y = 8,vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
   annotate(geom = "text", label = "T: 8'657 (7.15%)", size = 7, x = 9.98, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") + 
-  annotate(geom = "text", label = "F", size = 16, x = 10.117, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
+  annotate(geom = "text", label = "F", size = 16, x = 10.113, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
   annotate(geom = "text", label = "F: 2'202 (1.82%)", size = 7, x = 10.11, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") + 
-  annotate(geom = "text", label = "L", size = 42, x = 10.15, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
+  annotate(geom = "text", label = "L", size = 42, x = 10.146, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
   annotate(geom = "text", label = "L: 5'650 (4.67%)", size = 7, x = 10.23, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") + 
-  annotate(geom = "text", label = "I", size = 62, x = 10.175, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") +  
+  annotate(geom = "text", label = "I", size = 62, x = 10.171, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") +  
   annotate(geom = "text", label = "I: 8'274 (6.84%)", size = 7, x = 10.35, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") + 
-  annotate(geom = "text", label = "X", size = 2, x = 10.173, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
+  annotate(geom = "text", label = "X", size = 2, x = 10.168, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#E50914") + 
   annotate(geom = "text", label = "X: 248 (0.20%)", size = 7, x = 10.47, y = 16, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "grey50") + 
   xlim(9.5,10.6) + ylim(0,20) + 
   labs(caption = "Title of Movies & Series in the Netflix catalogue | Data: kaggle | #TidyTuesday | @a_bagaini") +
