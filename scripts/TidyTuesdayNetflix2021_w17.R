@@ -28,7 +28,7 @@ p <- ggplot() + theme_void() + theme(plot.background = element_rect(fill = "grey
            label = 
              "Font size represents how often
            each letter appears in the titles
-           relative to the whole catalogue", size = 4, lineheight = 0.7, x = 9.93, y = 9, vjust = "bottom", hjust = "right", family = "Montserrat Regular", color = "grey50") +
+           relative to the whole catalogue", size = 4, lineheight = 0.7, x = 9.93, y = 8, vjust = "bottom", hjust = "right", family = "Montserrat Regular", color = "grey50") +
  
   annotate(geom = "text", 
            label = 
