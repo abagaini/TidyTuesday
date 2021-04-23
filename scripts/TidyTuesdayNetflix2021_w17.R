@@ -4,8 +4,7 @@
 
 
 library(tidyverse)
-library(waffle)
-library(cowplot)
+
 
 
 # DATA --------------------------------------------------------------------
@@ -37,8 +36,7 @@ dt_c <- dt_c %>% filter(character != "")
 
 # PLOTS -------------------------------------------------------------------
 
-# recreate netflix logo (not that efficient, do not know another way to go about this)
-#use dt_netflix to specify the font sizes and manually place the letters/text
+# netflix logo
 p <- ggplot() + theme_void() + theme(plot.background = element_rect(fill = "grey20"), 
                                      plot.caption = element_text(size = 12, color = "#E50914", hjust = 0.98, family = "Bebas Neue", margin = margin(b = 5, t = 10)))+
   annotate(geom = "text", label = "N", size = 58, x = 10, y = 8, vjust = "bottom", hjust = "right", family = "Bebas Neue", color = "#e50914") +
@@ -79,21 +77,23 @@ p
 
 
 # character occurence
+
+
 theme_set(theme_void())
 p2 <- dt_c  %>% ggplot(aes(x = reorder(character, freq_c), y = freq_c, label = character)) +
-  geom_bar(stat = "identity", fill = "grey40",colour = "grey60", size = 0.5) + 
+  geom_bar(stat = "identity", fill = "grey40",colour = "grey60", size = 0.5, width = 0.85) + 
   labs(y = "Mean centered number of occurences",
-       caption = "*includes letters, numbers, common punctuation, does not include certain special characters such as letters with accents, arabic letters, as well Chinese, Japanese and Korean characters\nTitle of Movies & Series in the Netflix catalogue | Data: kaggle | #TidyTuesday | @a_bagaini") +
-theme(plot.background = element_rect(fill = "grey20"),
-      plot.margin = margin(l = 10, r = 20),
+       caption = "*only listing letters, numbers, common punctuation,not listing certain special characters such as letters with accents, arabic letters, as well Chinese, Japanese and Korean characters\nTitle of Movies & Series in the Netflix catalogue | Data: kaggle | #TidyTuesday | @a_bagaini") +
+  theme(plot.background = element_rect(fill = "grey20"),
+        plot.margin = margin(l = 10, r = 20),
         axis.text.y = element_text(size = 12, colour = "#E50914", family = "Bebas Neue"),
         panel.grid.major.y = element_line(colour = "grey40", size = 0.1),
-      plot.caption = element_text(size = 12, color = "#E50914", hjust = 0.98, margin = margin(b = 5, t = 10), family = "Bebas Neue", lineheight = 0.7),
-    axis.title.y = element_text(size = 15, colour = "#E50914", angle = 90, margin = margin(r = 10, l = 10), family = "Bebas Neue"))+
+        plot.caption = element_text(size = 12, color = "#E50914", hjust = 0.98, margin = margin(b = 5, t = 10), family = "Bebas Neue", lineheight = 0.7),
+        axis.title.y = element_text(size = 15, colour = "#E50914", angle = 90, margin = margin(r = 10, l = 10), family = "Bebas Neue"))+
   scale_y_continuous(breaks = c(-1000,0, seq(2000, 14000, 4000))) +
   geom_hline(aes(yintercept = 0), colour = "grey60", size = 0.8) +
   annotate(geom = "text",label = 
-"Occurrences of characters*\nin the Netflix catalogue", lineheight = 0.7,
+             "Occurrences of characters*\nin the Netflix catalogue", lineheight = 0.7,
            size = 20, x = 2, y = 12500, vjust = "top", hjust = "left", family = "Bebas Neue", color = "#E50914" )+
   annotate(geom = "text",label = 
              "Relative to the mean", lineheight = 0.7,
@@ -101,7 +101,7 @@ theme(plot.background = element_rect(fill = "grey20"),
   annotate(geom = "text",label = "Mean occurrence: 756", size = 5, x = 2, y = 9700, vjust = "top", hjust = "left", family = "Montserrat Regular", color = "grey60" )+
   annotate(geom = "text",label = "Median occurrence: 2", size = 5, x = 10, y = 9700, vjust = "top", hjust = "left", family = "Montserrat Regular", color = "grey60" )+
   geom_text(position = position_stack(vjust = .5), color = "grey80", family = "Bebas Neue", size = 11) 
- p2
+p2
 
 # save
 ggsave(p, file="tidytue_w17_1.png", device="png",dpi = 400, width = 50, height = 25, units = "cm") # can adjust resolution
